@@ -25,7 +25,7 @@ function setup(){
     var box= createSprite(0,550,40,40);
     box.x= Math.round(20,550);
     box.velocityX=2;
-    box.velocityY=2;
+    
     box.shapeColor="white";
 }
    
