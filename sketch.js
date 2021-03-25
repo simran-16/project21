@@ -22,8 +22,8 @@ function setup(){
     surface4.shapeColor="green";
 
     //create box sprite and give velocity
-    var box= createSprite(random(20,750),100, 40,40);
-    box.x= Math.round(20,750);
+    box= createSprite(random(20,750),100, 40,40);
+    
     box.velocityX=4;
     box.velocityY=9;
     box.shapeColor="white";
@@ -34,22 +34,22 @@ function setup(){
 function draw() {
     background(rgb(169,169,169));
     //create edgeSprite
-    edges=  createEdgeSprites();
-    box.bounceoff(edges);
+    edges=createEdgeSprites();
+    bounceoff(edges,box);
     
-    if(surface1.isTouching(box) && box.bounceoff(surface1)){
+    if(isTouching(box,surface1) && bounceoff(surface1,box)){
         box.shapeColor = "blue";
         }
 
-    if(surface2.isTouching(box) && box.bounceoff(surface2)){
+    if(isTouching(box,surface2) && bounceoff(surface2,box)){
         box.shapeColor = "yellow";
        }
 
-    if(surface3.isTouching(box) && box.bounceoff(surface3)){
+    if(isTouching(box,surface3) && bounceoff(surface3,box)){
         box.shapeColor = "red";
     }
 
-    if(surface4.isTouching(box) && box.bounceoff(surface4)){
+    if(isTouching(box,surface4) && bounceoff(surface4,box)){
         box.shapeColor = "green";
     }
 
